@@ -1,3 +1,4 @@
+// Version 1.0.1
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import dotenv from "dotenv";
@@ -24,6 +25,3 @@ const start = async () => {
 
 start();
 
-//teste
-
-//teste//teste
