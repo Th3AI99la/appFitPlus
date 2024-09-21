@@ -23,14 +23,17 @@ O **FitPlus** foi projetado para ajudar os usuários a gerenciar suas dietas de 
 ## 🛠️ Back-end (Node.js)
 
 1. **Integração com API:**
+
    - Utilizo a **API Google Generative AI** para criar prompts que recebem perguntas e retornam respostas ao front-end em formato JSON.
 
 2. **API:** Google Generative AI
 
 3. **Testes:**
+
    - Utilizo o **Postman** para realizar testes de resposta "POST", garantindo a funcionalidade adequada do back-end.
 
 4. **Codificação:**
+
    - Implementei o **Fastify** para construir um servidor eficiente e de alto desempenho.
    - O código é formatado com **ESLint** e **Prettier** para garantir legibilidade e padronização.
    - Implemento tratamento robusto de erros e exceções para oferecer uma melhor experiência ao usuário.
@@ -46,10 +49,6 @@ O **FitPlus** foi projetado para ajudar os usuários a gerenciar suas dietas de 
 
 - **Interface do Usuário:**
   - Logo criada
-  - A interface é responsiva, garantindo compatibilidade em dispositivos móveis e tablets.
+  - A interface é responsiva
 
-
-
-
-
-**O APLICATIVO AINDA ESTÁ EM DESENVOLVIMENTO!**
+## O APLICATIVO AINDA ESTÁ EM DESENVOLVIMENTO!
