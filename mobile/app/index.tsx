@@ -1,17 +1,9 @@
-import { Text, View } from "react-native";
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Deu certo</Text>
-      <Text>Deu certo</Text>
-      <Text>Deu certo</Text>
+    <View>
+      <Image source={require('../assets/images/logo.png')} />
     </View>
   );
 }

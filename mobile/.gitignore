@@ -32,3 +32,10 @@ coverage/
 
 expo-env.d.ts
 # @end expo-cli
+
+node_modules/
+dist/
+.expo/
+.vscode/
+.react/
+
