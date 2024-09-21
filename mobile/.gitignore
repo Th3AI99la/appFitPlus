@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+# Expo files
+.expo/
+# Build output
+dist/
+web-build/
+# Logs
+npm-debug.*
+# Certificates and keys
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+# Backup files
+*.orig.*
+# macOS generated files
+.DS_Store
+# Coverage reports
+coverage/
+# IDE files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+# Environment variables
+.env

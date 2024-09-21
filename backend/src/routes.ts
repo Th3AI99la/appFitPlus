@@ -11,7 +11,6 @@ export async function routes(
   fastify: FastifyInstance,
   options: FastifyPluginOptions
 ) {
-
   // ROTA TESTE COM DADOS SETADOS
   fastify.get("/teste", (request: FastifyRequest, reply: FastifyReply) => {
     let responseText =
