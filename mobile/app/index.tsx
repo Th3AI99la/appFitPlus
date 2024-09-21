@@ -9,7 +9,9 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>DEU CERTO.MSASA</Text>
+      <Text>Deu certo</Text>
+      <Text>Deu certo</Text>
+      <Text>Deu certo</Text>
     </View>
   );
 }
