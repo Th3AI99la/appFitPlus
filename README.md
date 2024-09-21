@@ -51,4 +51,4 @@ O **FitPlus** foi projetado para ajudar os usuários a gerenciar suas dietas de 
   - Logo criada
   - A interface é responsiva
 
-* 🧑‍💻 O APLICATIVO AINDA ESTÁ EM DESENVOLVIMENTO!
+**O APLICATIVO AINDA ESTÁ EM DESENVOLVIMENTO!🧑‍💻**
