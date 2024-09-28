@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
-import * as Font from "expo-font"; // Importa o módulo para carregar fontes
 import { colors } from "../constants/colors";
+import { Link } from "expo-router";
+//fontes
+import React, { useState, useEffect } from "react";
+import * as Font from "expo-font"; // Importa o módulo para carregar fontes
 import { Fonts } from "../styles/fonts";
 
 export default function Index() {
@@ -28,7 +30,7 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Image source={require("../assets/images/logo5.png")} />
+      <Image style={styles.image} source={require("../assets/images/logo5.png")} />
 
       <Text style={styles.title}>
         FitPlus<Text style={{ color: colors.white }}>.AI</Text>
@@ -38,9 +40,11 @@ export default function Index() {
         Seu aplicativo de dieta inteligente para uma vida mais saudável e equilibrada.
       </Text>
 
-      <Pressable style={styles.button}>
-        <Text style={styles.buttonText}>Gerar Dieta</Text>
-      </Pressable>
+      <Link href="/step" asChild>
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Gerar Dieta</Text>
+        </Pressable>
+      </Link>
     </View>
   );
 }
@@ -61,6 +65,13 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15
   },
+  //#image
+  image: {
+    width: 380, // Largura desejada
+    height: 260 // Altura desejada
+    //backgroundColor: "blue", //visualizar corte
+  },
+
   //#title
   title: {
     // texto da logo
