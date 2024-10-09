@@ -1,3 +1,5 @@
+// ESPAÇO PARA INSERIR CHAMADAS NA VIEW
+
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import { colors } from "../../constants/colors";
 import { Header } from "../../components/header";

@@ -1,3 +1,5 @@
+// TELA INICIAL
+
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import { colors } from "../constants/colors";
 import { Link } from "expo-router";

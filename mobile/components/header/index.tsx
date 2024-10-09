@@ -1,3 +1,5 @@
+// HEADER DO "VAMOS COMEÇAR"
+
 import { SafeAreaView, Platform, StatusBar } from "react-native"; // Header
 import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons"; // icons
@@ -76,6 +78,5 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontFamily: Fonts.PoppinsBold,
     color: colors.black
-    
   }
 });
