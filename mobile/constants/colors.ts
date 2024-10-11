@@ -6,5 +6,6 @@ export const colors = {
    blue: "#004aad",
    black: "#000000FF",
    yellow: "#ffde59",
-   cinza: "#d9d9d9"
+   cinza: "#d9d9d9",
+   errorcolor: "#FF0000FF"
 };

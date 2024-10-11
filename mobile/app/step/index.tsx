@@ -5,6 +5,9 @@ import { colors } from "../../constants/colors";
 import { Header } from "../../components/header";
 import { Input } from "../../components/input";
 
+// Dados e Store
+import { useDataStore } from "../../store/data";
+
 // Fontes
 import React, { useState, useEffect } from "react";
 import * as Font from "expo-font"; // Importa o módulo para carregar fontes
@@ -15,19 +18,23 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-// Validaçoes
+// Router - Anvançar tela
+
+import { router } from "expo-router";
+
+// Validações
 const schema = z.object({
    name: z.string().min(1, {
-      message: "O nome é obrigatório"
+      message: "Nome é obrigatório. Por favor, insira seu nome completo."
    }),
    idade: z.string().min(1, {
-      message: "A idade é obrigatório"
+      message: "Idade é obrigatória. Por favor, informe sua idade."
    }),
    altura: z.string().min(1, {
-      message: "A altura é obrigatória"
+      message: "Altura é obrigatória. Por favor, insira sua altura."
    }),
    peso: z.string().min(1, {
-      message: "O peso é obrigatório"
+      message: "Peso é obrigatório. Por favor, informe seu peso."
    })
 });
 
@@ -44,6 +51,24 @@ export default function Step() {
    } = useForm<FormData>({
       resolver: zodResolver(schema)
    });
+
+   // useDataStore - Tela 1
+
+   const setPageOne = useDataStore((state) => state.setPageOne);
+
+   // Avançar tela
+
+   function handleCreate(data: FormData) {
+      console.log("PASSANDO PAGINA 1");
+      setPageOne({
+         name: data.name,
+         peso: data.peso,
+         altura: data.altura,
+         idade: data.idade
+      });
+
+      router.push("/create");
+   }
 
    // Carregar fontes personalizadas
    const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -84,7 +109,7 @@ export default function Step() {
             <Text style={styles.label}>Idade:</Text>
             <Input name="idade" control={control} placeholder="Ex: 22 anos" error={errors.idade?.message} keyboardType="numeric" />
 
-            <Pressable style={styles.button}>
+            <Pressable style={styles.button} onPress={handleSubmit(handleCreate)}>
                <Text style={styles.buttonText}> Avançar</Text>
             </Pressable>
          </ScrollView>

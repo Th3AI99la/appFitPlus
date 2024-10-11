@@ -4,6 +4,11 @@ import { View, StyleSheet, Text, TextInput, KeyboardTypeOptions } from "react-na
 import { Controller } from "react-hook-form";
 import { colors } from "@/constants/colors";
 
+// Fontes
+import React, { useState, useEffect } from "react";
+import * as Font from "expo-font"; // Importa o módulo para carregar fontes
+import { Fonts } from "../../styles/fonts";
+
 interface InputProps {
    name: string;
    control: any;
@@ -14,6 +19,28 @@ interface InputProps {
 }
 
 export function Input({ name, control, placeholder, rules, error, keyboardType }: InputProps) {
+   // Carregar fontes personalizadas
+   const [fontsLoaded, setFontsLoaded] = useState(false);
+
+   useEffect(() => {
+      async function loadFonts() {
+         // passar endereço das fontes
+         await Font.loadAsync({
+            "Batangas-Bold": require("../../assets/fonts/Batangas-Bold.otf"),
+            "Poppins-Regular": require("../../assets/fonts/Poppins-Regular.ttf"),
+            "Poppins-Bold": require("../../assets/fonts/Poppins-Bold.ttf")
+         });
+         setFontsLoaded(true);
+      }
+      loadFonts();
+   }, []);
+
+   // Retorna null até que as fontes estejam carregadas
+   if (!fontsLoaded) {
+      return null; // Pode ser substituído por um spinner de loading
+   }
+
+   // Dev
    return (
       <View style={styles.container}>
          <Controller
@@ -33,7 +60,6 @@ export function Input({ name, control, placeholder, rules, error, keyboardType }
             )}
          ></Controller>
 
-
          {error && <Text style={styles.errorText}>{error}</Text>}
       </View>
    );
@@ -43,7 +69,6 @@ const styles = StyleSheet.create({
    container: {
       marginBottom: 15
    },
-
    // Estilizar o Input
    input: {
       height: 45,
@@ -52,7 +77,11 @@ const styles = StyleSheet.create({
       borderRadius: 10
    },
    errorText: {
-      color: "red",
+      color: colors.errorcolor,
       marginTop: 4,
+      fontSize: 14,
+      fontFamily: Fonts.PoppinsRegular,
+      lineHeight: 20,
+      textAlign: "left"
    }
 });
