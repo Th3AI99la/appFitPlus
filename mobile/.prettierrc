@@ -2,8 +2,8 @@
   "semi": true,
   "singleQuote": false, 
   "trailingComma": "none",
-  "printWidth": 100,
-  "tabWidth": 2,
+  "printWidth": 200,
+  "tabWidth": 3,
   "overrides": [
     {
       "files": "*.tsx",
