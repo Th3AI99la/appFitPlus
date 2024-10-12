@@ -1,4 +1,4 @@
-// INPUT ENTRADA
+// INPUT - VAMOS COMEÇAR PASSO 1
 
 import { View, StyleSheet, Text, TextInput, KeyboardTypeOptions } from "react-native";
 import { Controller } from "react-hook-form";
@@ -74,11 +74,12 @@ const styles = StyleSheet.create({
       height: 45,
       backgroundColor: colors.white,
       paddingHorizontal: 10,
-      borderRadius: 10
+      borderRadius: 15,
+      
    },
    errorText: {
       color: colors.errorcolor,
-      marginTop: 4,
+      marginTop: 3,
       fontSize: 14,
       fontFamily: Fonts.PoppinsRegular,
       lineHeight: 20,

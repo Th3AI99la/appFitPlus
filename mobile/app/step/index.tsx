@@ -1,4 +1,4 @@
-// ESPAÇO PARA INSERIR CHAMADAS NA VIEW
+// PASSO 1 - FORMULARIO
 
 import { View, Text, Image, StyleSheet, Pressable, ScrollView, KeyboardTypeOptions } from "react-native";
 import { colors } from "../../constants/colors";
