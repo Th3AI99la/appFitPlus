@@ -98,16 +98,40 @@ export default function Step() {
 
          <ScrollView style={styles.content}>
             <Text style={styles.label}>Nome:</Text>
-            <Input name="name" control={control} placeholder="Digite seu nome" error={errors.name?.message} keyboardType="default" />
+            <Input
+               name="name"
+               control={control}
+               placeholder="Digite seu nome"
+               error={errors.name?.message}
+               keyboardType="default"
+            />
 
             <Text style={styles.label}>Peso Atual:</Text>
-            <Input name="peso" control={control} placeholder="Ex: 70 kg" error={errors.peso?.message} keyboardType="numeric" />
+            <Input
+               name="peso"
+               control={control}
+               placeholder="Ex: 70 kg"
+               error={errors.peso?.message}
+               keyboardType="numeric"
+            />
 
             <Text style={styles.label}>Altura:</Text>
-            <Input name="altura" control={control} placeholder="Ex: 1.85 m" error={errors.altura?.message} keyboardType="numeric" />
+            <Input
+               name="altura"
+               control={control}
+               placeholder="Ex: 1.85 m"
+               error={errors.altura?.message}
+               keyboardType="numeric"
+            />
 
             <Text style={styles.label}>Idade:</Text>
-            <Input name="idade" control={control} placeholder="Ex: 22 anos" error={errors.idade?.message} keyboardType="numeric" />
+            <Input
+               name="idade"
+               control={control}
+               placeholder="Ex: 22 anos"
+               error={errors.idade?.message}
+               keyboardType="numeric"
+            />
 
             <Pressable style={styles.button} onPress={handleSubmit(handleCreate)}>
                <Text style={styles.buttonText}> Avançar</Text>
@@ -142,12 +166,13 @@ const styles = StyleSheet.create({
       height: 45,
       justifyContent: "center",
       alignItems: "center",
-      borderRadius: 10
+      borderRadius: 10,
+      marginTop: 25 // trazer botão para baixo
    },
 
    buttonText: {
       color: colors.white,
-      fontSize: 17,
+      fontSize: 18,
       fontFamily: Fonts.PoppinsBold
    }
 });

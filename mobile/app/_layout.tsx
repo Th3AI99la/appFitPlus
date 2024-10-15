@@ -6,7 +6,7 @@ export default function RootLayout() {
    return (
       <Stack>
          <Stack.Screen
-            // Tela 1 - Tela Inicial 
+            // Tela 1 - Tela Inicial
             name="index"
             options={{
                headerShown: false

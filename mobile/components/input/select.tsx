@@ -4,6 +4,9 @@ import { View, StyleSheet, Text, TouchableOpacity, FlatList, Modal } from "react
 import { Controller } from "react-hook-form";
 import { colors } from "@/constants/colors";
 
+// efeito blur
+import { BlurView } from "expo-blur";
+
 //Estados
 import { useState } from "react";
 
@@ -64,21 +67,36 @@ export function Select({ name, control, placeholder, error, options }: SelectPro
             render={({ field: { onChange, onBlur, value } }) => (
                <>
                   <TouchableOpacity style={styles.select} onPress={() => setVisible(true)}>
-                     <Text>Selecione algo</Text>
+                     <Text>{value ? options.find((options) => options.value === value)?.label : placeholder}</Text>
                      <Feather name="arrow-down" size={15} color="#000">
                         {" "}
                      </Feather>
                   </TouchableOpacity>
 
-                  <Modal visible={visible} animationType="fade" transparent={true} onRequestClose={() => setVisible(false)}>
-                     <TouchableOpacity style={styles.modalContainer} activeOpacity={1} onPress={() => setVisible(false)}>
-                        <TouchableOpacity style={styles.modalCotent} activeOpacity={1}>
+                  <Modal
+                     visible={visible}
+                     animationType="fade" // estilo do abertura do modal
+                     transparent={true} // trasparencia
+                     onRequestClose={() => setVisible(false)}
+                  >
+                     <TouchableOpacity
+                        style={styles.modalContainer} // style do modal
+                        activeOpacity={1}
+                        onPress={() => setVisible(false)} // fechar modal
+                     >
+                        <TouchableOpacity style={styles.modalContent} activeOpacity={1}>
                            <FlatList
-                              contentContainerStyle={{ gap: 4 }}
+                              contentContainerStyle={{ gap: 5 }} // espacamento dentro do modal
                               data={options}
                               keyExtractor={(item) => item.value.toString()}
                               renderItem={({ item }) => (
-                                 <TouchableOpacity style={styles.options}>
+                                 <TouchableOpacity
+                                    style={styles.options}
+                                    onPress={() => {
+                                       onChange(item.value); // selecionar item
+                                       setVisible(false); // fechar quando selecionar
+                                    }}
+                                 >
                                     <Text> {item.label} </Text>
                                  </TouchableOpacity>
                               )}
@@ -109,7 +127,7 @@ const styles = StyleSheet.create({
    errorText: {
       color: colors.errorcolor,
       marginTop: 3,
-      fontSize: 14,
+      fontSize: 15,
       fontFamily: Fonts.PoppinsRegular,
       lineHeight: 20,
       textAlign: "left"
@@ -117,30 +135,33 @@ const styles = StyleSheet.create({
 
    select: {
       flexDirection: "row",
-      height: 43,
+      height: 55, // tamanho da caixa de texto
       backgroundColor: colors.white,
       alignItems: "center",
       justifyContent: "space-between",
       paddingHorizontal: 10,
       borderRadius: 15
    },
-   // cor de fundo do modal
+   // cor de fundo do modal - efeito blur
    modalContainer: {
-      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      backgroundColor: "rgba(0, 0, 0, 0.7)",
       flex: 1,
       justifyContent: "center"
    },
    // item dentro do modal
-   modalCotent: {
+   modalContent: {
       backgroundColor: colors.white,
-      borderRadius: 8,
-      padding: 20
+      borderRadius: 10,
+      paddingEnd: 12,
+      paddingStart: 12,
+      paddingBottom: 20, // espaço em cima
+      paddingTop: 20 // espaço embaixo
    },
 
    // texto dentro da modal
    options: {
       paddingVertical: 15,
-      backgroundColor: "rgba(208, 208, 208, 0.40)", // opçao
+      backgroundColor: "rgba(128, 128, 128, 0.2)", // opçao
       borderRadius: 4,
       paddingHorizontal: 8
    }

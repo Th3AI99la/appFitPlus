@@ -31,7 +31,7 @@ export function Header({ step, title }: HeaderProps) {
    if (!fontsLoaded) {
       return null; // Pode ser substituído por um spinner de loading
    }
-   
+
    // Dev
    return (
       <SafeAreaView style={styles.container}>

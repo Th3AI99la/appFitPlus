@@ -67,22 +67,24 @@ export function Input({ name, control, placeholder, rules, error, keyboardType }
 
 const styles = StyleSheet.create({
    container: {
-      marginBottom: 15
+      marginBottom: 9
    },
    // Estilizar o Input
    input: {
       height: 45,
       backgroundColor: colors.white,
       paddingHorizontal: 10,
-      borderRadius: 15,
-      
+      borderRadius: 15
    },
    errorText: {
       color: colors.errorcolor,
-      marginTop: 3,
+      marginTop: 8,
       fontSize: 14,
       fontFamily: Fonts.PoppinsRegular,
       lineHeight: 20,
-      textAlign: "left"
+      textAlign: "left",
+      paddingLeft: 11,
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      borderRadius: 3
    }
 });

@@ -30,6 +30,12 @@ const schema = z.object({
    })
 });
 
+// função do botão enviar
+
+function handleCreate(data: FormData) {
+   console.log(data);
+}
+
 // Inferencia de Tipo
 type FormData = z.infer<typeof schema>;
 
@@ -43,10 +49,58 @@ export default function Create() {
       resolver: zodResolver(schema)
    });
 
-   // Opçoes de genero
+   // Opções de gênero
    const generoOptions = [
       { label: "Masculino", value: "masculino" },
       { label: "Feminino", value: "feminino" }
+   ];
+
+   // Opções de nível de atividade física
+   const levelOptions = [
+      {
+         label: "Sedentário - (Pouca ou nenhuma atividade física)",
+         value: "sedentário"
+      },
+      {
+         label: "Levemente ativo - (Exercícios 1 a 3 vezes por semana)",
+         value: "levemente ativo"
+      },
+      {
+         label: "Moderadamente ativo - (Exercícios 3 a 5 vezes por semana)",
+         value: "moderadamente ativo"
+      },
+      {
+         label: "Altamente ativo - (Exercícios 5 a 7 vezes por semana)",
+         value: "altamente ativo"
+      },
+      {
+         label: "Extremamente ativo - (Treinos intensos diários)",
+         value: "extremamente ativo"
+      } // Nova opção para quem treina intensamente
+   ];
+
+   // Opções de objetivo
+   const objetivoOptions = [
+      {
+         label: "Perda de Peso - (Reduzir gordura corporal)",
+         value: "perda de peso"
+      },
+      {
+         label: "Ganhar Massa Muscular - (Hipertrofia)",
+         value: "hipertrofia"
+      },
+      {
+         label: "Hipertrofia + Definição - (Ganhar músculos e reduzir gordura)",
+         value: "hipertrofia e definição - ganhar músculos e reduzir gordura"
+      },
+      {
+         label: "Definição Muscular - (Evidenciar a musculatura)",
+         value: "definição muscular"
+      },
+      {
+         label: "Manter o Peso - (Estabilizar o peso atual)",
+         value: "manutenção do peso - estabilizar o peso atual"
+      }
    ];
 
    // Carregar fontes personalizadas
@@ -70,14 +124,42 @@ export default function Create() {
       return null; // Pode ser substituído por um spinner de loading
    }
 
-   // Dev
+   // Dev do Select
    return (
       <View style={styles.container}>
          <Header step="Passo 2 " title="Finalizando Dieta"></Header>
 
          <ScrollView style={styles.content}>
-            <Text style={styles.label}>Sexo: </Text>
-            <Select control={control} name="genero" placeholder="Selecione o seu Sexo" error={errors.genero?.message} options={generoOptions}></Select>
+            <Text style={styles.label}>Gênero:</Text>
+            <Select
+               control={control}
+               name="genero"
+               placeholder="Escolha o seu gênero"
+               error={errors.genero?.message}
+               options={generoOptions}
+            />
+
+            <Text style={styles.label}>Nível de Atividade Física:</Text>
+            <Select
+               control={control}
+               name="level"
+               placeholder="Selecione o seu nível de atividade física"
+               error={errors.level?.message}
+               options={levelOptions}
+            />
+
+            <Text style={styles.label}>Meta de Treino:</Text>
+            <Select
+               control={control}
+               name="objetivo"
+               placeholder="Defina o seu objetivo de treino"
+               error={errors.objetivo?.message}
+               options={objetivoOptions}
+            />
+
+            <Pressable style={styles.button} onPress={handleSubmit(handleCreate)}>
+               <Text style={styles.buttonText}> Avançar</Text>
+            </Pressable>
          </ScrollView>
       </View>
    );
@@ -100,5 +182,21 @@ const styles = StyleSheet.create({
    content: {
       paddingLeft: 15,
       paddingRight: 15
+   },
+
+   //Botão
+   button: {
+      backgroundColor: colors.blue,
+      height: 45,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: 10,
+      marginTop: 25 // trazer botão para baixo
+   },
+
+   buttonText: {
+      color: colors.white,
+      fontSize: 18,
+      fontFamily: Fonts.PoppinsBold
    }
 });

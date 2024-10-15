@@ -39,9 +39,7 @@ export default function Index() {
             FitPlus<Text style={{ color: colors.white }}>.AI</Text>
          </Text>
 
-         <Text style={styles.text}>
-            Seu aplicativo de dieta inteligente para uma vida mais saudável e equilibrada.
-         </Text>
+         <Text style={styles.text}>Seu aplicativo de dieta inteligente para uma vida mais saudável e equilibrada.</Text>
 
          <Link href="/step" asChild>
             <Pressable style={styles.button}>
@@ -70,8 +68,8 @@ const styles = StyleSheet.create({
    },
    //#image
    image: {
-      width: 380, // Largura desejada
-      height: 260 // Altura desejada
+      width: 360, // Largura desejada
+      height: 280 // Altura desejada
       //backgroundColor: "blue", //visualizar corte
    },
 
@@ -85,10 +83,10 @@ const styles = StyleSheet.create({
    //#text
    text: {
       // texto descritivo
-      fontSize: 15,
+      fontSize: 20,
       fontFamily: Fonts.PoppinsRegular,
       color: colors.white,
-      width: 261, // largura do texto
+      width: 350, // largura do texto
       textAlign: "center", // centralizar texto
       marginTop: 8,
       marginBottom: 8
@@ -108,7 +106,7 @@ const styles = StyleSheet.create({
    buttonText: {
       // texto dentro do botão
       color: colors.white,
-      fontSize: 17,
+      fontSize: 18,
       fontFamily: Fonts.PoppinsBold
    }
 });
