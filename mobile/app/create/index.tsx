@@ -3,6 +3,7 @@
 import { View, Text, StyleSheet, Pressable, ScrollView, KeyboardTypeOptions } from "react-native";
 import { Header } from "../../components/header/index";
 import { colors } from "../../constants/colors";
+import { router } from "expo-router";
 
 // Fontes
 import React, { useState, useEffect } from "react";
@@ -13,6 +14,9 @@ import { Fonts } from "../../styles/fonts";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+
+// Store
+import { useDataStore } from "../../store/data";
 
 // Select
 import { Select } from "../../components/input/select";
@@ -30,12 +34,6 @@ const schema = z.object({
    })
 });
 
-// função do botão enviar
-
-function handleCreate(data: FormData) {
-   console.log(data);
-}
-
 // Inferencia de Tipo
 type FormData = z.infer<typeof schema>;
 
@@ -48,6 +46,9 @@ export default function Create() {
    } = useForm<FormData>({
       resolver: zodResolver(schema)
    });
+
+   // passar de tela
+   const setPageTwo = useDataStore((state) => state.setPageTwo);
 
    // Opções de gênero
    const generoOptions = [
@@ -83,7 +84,7 @@ export default function Create() {
    const objetivoOptions = [
       {
          label: "Perda de Peso - (Reduzir gordura corporal)",
-         value: "perda de peso"
+         value: "perda de peso - reduzir gordura corporal"
       },
       {
          label: "Ganhar Massa Muscular - (Hipertrofia)",
@@ -102,6 +103,19 @@ export default function Create() {
          value: "manutenção do peso - estabilizar o peso atual"
       }
    ];
+
+   // função do botão enviar
+
+   function handleCreate(data: FormData) {
+      setPageTwo({
+         genero: data.genero,
+         level: data.level,
+         objetivo: data.objetivo
+      });
+
+      // Navegar para a proxima pagina
+      router.push("/diet");
+   }
 
    // Carregar fontes personalizadas
    const [fontsLoaded, setFontsLoaded] = useState(false);

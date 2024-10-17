@@ -75,7 +75,7 @@ export function Select({ name, control, placeholder, error, options }: SelectPro
 
                   <Modal
                      visible={visible}
-                     animationType="fade" // estilo do abertura do modal
+                     animationType= "fade" // estilo do abertura do modal
                      transparent={true} // trasparencia
                      onRequestClose={() => setVisible(false)}
                   >

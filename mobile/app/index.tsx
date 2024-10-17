@@ -9,6 +9,7 @@ import * as Font from "expo-font"; // Importa o módulo para carregar fontes
 import { Fonts } from "../styles/fonts";
 
 export default function Index() {
+   //Fontes personalizadas
    const [fontsLoaded, setFontsLoaded] = useState(false);
 
    // Carregar fontes personalizadas

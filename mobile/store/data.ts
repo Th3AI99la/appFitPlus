@@ -21,7 +21,7 @@ type DataState = {
    setPageTwo: (data: Pick<UserFitPlus, "genero" | "objetivo" | "level">) => void; // tela 2 = PICK - PEGAR
 };
 
-// New Uuser - Store
+// New User - Store
 
 export const useDataStore = create<DataState>((set) => ({
    user: {
