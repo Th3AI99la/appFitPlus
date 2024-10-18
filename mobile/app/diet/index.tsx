@@ -42,18 +42,18 @@ export default function Diet() {
                throw new Error("Erro ao carregar a dieta: usuário não encontrado ou não autenticado.");
             }
 
-            const response = await api.get<ResponseData>("/teste");
+            //const response = await api.get<ResponseData>("/teste");
 
-            // // fazer a requisão
-            // const response = await api.post<ResponseData>("/create", {
-            //    nome: user.name,
-            //    idade: user.idade,
-            //    genero: user.genero,
-            //    altura: user.altura,
-            //    peso: user.peso,
-            //    level: user.level,
-            //    objetivo: user.objetivo
-            // });
+            // fazer a requisão
+            const response = await api.post<ResponseData>("/create", {
+               nome: user.name,
+               idade: user.idade,
+               genero: user.genero,
+               altura: user.altura,
+               peso: user.peso,
+               level: user.level,
+               objetivo: user.objetivo
+            });
 
             return response.data.data;
          } catch (err) {
@@ -61,6 +61,19 @@ export default function Diet() {
          }
       }
    });
+
+   // Adicione o estado para controlar o texto exibido no Loading...
+   const [showFirstText, setShowFirstText] = useState(true);
+
+   // Use o efeito para alternar os textos a cada segundo
+   useEffect(() => {
+      const interval = setInterval(() => {
+         setShowFirstText((prev) => !prev); // Alterna entre true e false
+      }, 1000); // Intervalo de 1 segundo
+
+      // Limpeza do intervalo ao desmontar o componente
+      return () => clearInterval(interval);
+   }, []);
 
    // Fontes personalizadas
    const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -114,8 +127,11 @@ export default function Diet() {
    if (isFetching) {
       return (
          <View style={styles.loading}>
-            <Text style={styles.loadingText}>Estamos gerando sua dieta personalizada...</Text>
-            <Text style={styles.loadingText}>Consultando a Inteligência Artificial, por favor, aguarde.</Text>
+            {showFirstText ? (
+               <Text style={styles.loadingText}>Estamos gerando sua dieta personalizada...</Text>
+            ) : (
+               <Text style={styles.loadingText}>Consultando a Inteligência Artificial, por favor, aguarde.</Text>
+            )}
          </View>
       );
    }
