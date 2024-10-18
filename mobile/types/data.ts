@@ -6,6 +6,7 @@ interface RefeicoesProps {
    alimentos: string[];
 }
 
+// Refeicoes =  RefeicoesProps[]
 export interface Data {
    nome: string;
    idade: number;
@@ -15,4 +16,5 @@ export interface Data {
    level: string;
    objetivo: string;
    refeicoes: RefeicoesProps[];
+   suplementos: string[];
 }
