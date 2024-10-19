@@ -84,23 +84,27 @@ export default function Create() {
    const objetivoOptions = [
       {
          label: "Perda de Peso - (Reduzir gordura corporal)",
-         value: "perda de peso - reduzir gordura corporal"
+         value: "Perda de Peso - Reduzir gordura corporal"
       },
       {
          label: "Ganhar Massa Muscular - (Hipertrofia)",
-         value: "hipertrofia"
+         value: "Ganhar Massa Muscular - Hipertrofia"
       },
       {
-         label: "Hipertrofia + Definição - (Ganhar músculos e reduzir gordura)",
-         value: "hipertrofia e definição - ganhar músculos e reduzir gordura"
+         label: "Ganhar músculos e reduzir gordura - (Hipertrofia + Definição)",
+         value: "Ganhar músculos e reduzir gordura - Hipertrofia + Definição"
       },
       {
          label: "Definição Muscular - (Evidenciar a musculatura)",
-         value: "definição muscular"
+         value: "Definição Muscular - Evidenciar a musculatura"
       },
       {
          label: "Manter o Peso - (Estabilizar o peso atual)",
-         value: "manutenção do peso - estabilizar o peso atual"
+         value: "Manter o Peso - Estabilizar o peso atual"
+      },
+      {
+         label: "Ganho de Peso - (De forma saudável)",
+         value: "Ganho de Peso - De forma saudável"
       }
    ];
 

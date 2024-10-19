@@ -24,18 +24,23 @@ import { router } from "expo-router";
 
 // Validações
 const schema = z.object({
-   name: z.string().min(1, {
-      message: "Nome é obrigatório. Por favor, insira seu nome completo."
-   }),
-   idade: z.string().min(1, {
-      message: "Idade é obrigatória. Por favor, informe sua idade."
-   }),
-   altura: z.string().min(1, {
-      message: "Altura é obrigatória. Por favor, insira sua altura."
-   }),
-   peso: z.string().min(1, {
-      message: "Peso é obrigatório. Por favor, informe seu peso."
-   })
+   name: z
+      .string()
+      .min(1, { message: "Nome é obrigatório. Por favor, insira seu nome completo." })
+      .regex(/^[A-Z]/, { message: "O nome deve começar com letra maiúscula." }) // Validação: começa com letra maiúscula
+      .regex(/^[a-zA-Z\s]+$/, { message: "Insira um nome válido (apenas letras)." }), // Validação: apenas letras
+   idade: z
+      .string()
+      .min(1, { message: "Idade é obrigatória. Por favor, informe sua idade." })
+      .regex(/^[0-9]+$/, { message: "Idade deve conter apenas números." }), // Apenas números
+   altura: z
+      .string()
+      .min(1, { message: "Altura é obrigatória. Por favor, insira sua altura." })
+      .regex(/^[0-9,.]+$/, { message: "Altura deve conter apenas números." }), // Apenas números e vírgulas ou pontos
+   peso: z
+      .string()
+      .min(1, { message: "Peso é obrigatório. Por favor, informe seu peso." })
+      .regex(/^[0-9,.]+$/, { message: "Peso deve conter apenas números." }) // Apenas números e vírgulas ou pontos
 });
 
 // Inferencia de Tipo
@@ -51,6 +56,14 @@ export default function Step() {
    } = useForm<FormData>({
       resolver: zodResolver(schema)
    });
+
+   function handleAlturaChange(value: string) {
+      let formattedValue = value.replace(/[^0-9]/g, ""); // Remove caracteres não numéricos
+      if (formattedValue.length > 1) {
+         formattedValue = formattedValue[0] + "." + formattedValue.slice(1); // Adiciona o ponto após o primeiro dígito
+      }
+      return formattedValue;
+   }
 
    // useDataStore - Tela 1
 

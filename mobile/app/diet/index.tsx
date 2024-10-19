@@ -39,7 +39,7 @@ export default function Diet() {
       queryFn: async () => {
          try {
             if (!user) {
-               throw new Error("Erro ao carregar a dieta: usuário não encontrado ou não autenticado.");
+               throw new Error("Erro ao carregar a dieta...");
             }
 
             //const response = await api.get<ResponseData>("/teste");
@@ -54,6 +54,8 @@ export default function Diet() {
                level: user.level,
                objetivo: user.objetivo
             });
+
+            // Caso demore muito a responder, verifique as portas no SERVICE - IPV4
 
             return response.data.data;
          } catch (err) {
@@ -70,6 +72,24 @@ export default function Diet() {
       const interval = setInterval(() => {
          setShowFirstText((prev) => !prev); // Alterna entre true e false
       }, 1000); // Intervalo de 1 segundo
+
+      // Limpeza do intervalo ao desmontar o componente
+      return () => clearInterval(interval);
+   }, []);
+
+   // Estado para controlar o número de pontos
+   const [dots, setDots] = useState("");
+
+   // Use o efeito para alternar os pontos a cada 300ms
+   useEffect(() => {
+      const interval = setInterval(() => {
+         setDots((prev) => {
+            if (prev.length >= 3) {
+               return ""; // Reinicia os pontos após 3
+            }
+            return prev + "."; // Adiciona um ponto
+         });
+      }, 300); // Intervalo de 300ms para criar a animação
 
       // Limpeza do intervalo ao desmontar o componente
       return () => clearInterval(interval);
@@ -123,14 +143,32 @@ export default function Diet() {
       }
    }
 
+   // VERIFICAÇÃO PARA GERAÇÃO DE DIETA
+
+   // Verificador caso o tempo de 30 segundos seja excedido
+   const [timeoutExceeded, setTimeoutExceeded] = useState(false);
+
+   useEffect(() => {
+      const timer = setTimeout(() => {
+         setTimeoutExceeded(true); // Marca que o tempo limite foi excedido
+      }, 30000); // 30 segundos
+
+      // Limpeza do timer ao desmontar o componente ou se a busca finalizar
+      return () => clearTimeout(timer);
+   }, [isFetching]);
+
    // Se estiver carregando
    if (isFetching) {
       return (
-         <View style={styles.loading}>
-            {showFirstText ? (
-               <Text style={styles.loadingText}>Estamos gerando sua dieta personalizada...</Text>
+         <View style={timeoutExceeded ? styles.loadingError : styles.loading}>
+            {timeoutExceeded ? (
+               <Text style={styles.loadingTextError}>
+                  Não foi possível gerar a Dieta, verifique a conexão com a internet.
+               </Text>
+            ) : showFirstText ? (
+               <Text style={styles.loadingText}>Estamos gerando sua dieta personalizada{dots}</Text>
             ) : (
-               <Text style={styles.loadingText}>Consultando a Inteligência Artificial, por favor, aguarde.</Text>
+               <Text style={styles.loadingText}>Consultando a Inteligência Artificial, por favor, aguarde{dots}</Text>
             )}
          </View>
       );
@@ -140,10 +178,15 @@ export default function Diet() {
    if (error) {
       return (
          <View style={styles.loading}>
-            <Text style={styles.loadingText}>Não foi possível gerar a dieta.</Text>
-            <Link to="/">
-               <Text style={styles.loadingText}>Clique aqui para tentar novamente.</Text>
-            </Link>
+            <View style={styles.loadingButtonIcon}>
+               <Ionicons name="close-circle" size={25} color="red"></Ionicons>
+               <Text style={styles.loadingTextErrorText}>Não foi possível gerar a dieta.</Text>
+            </View>
+            <Pressable style={styles.buttonError} onPress={() => router.replace("/")}>
+               <View style={styles.loadingButtonIcon}>
+                  <Text style={styles.loadingTextErrorButton}>Clique aqui para tentar novamente</Text>
+               </View>
+            </Pressable>
          </View>
       );
    }
@@ -223,6 +266,14 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       alignItems: "center"
    },
+
+   loadingError: {
+      flex: 1,
+      backgroundColor: colors.errorcolor, // cor de fundo do carregando
+      justifyContent: "center",
+      alignItems: "center"
+   },
+
    loadingText: {
       fontSize: 20,
       color: colors.background,
@@ -230,6 +281,47 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       alignItems: "center",
       fontFamily: Fonts.PoppinsRegular
+   },
+
+   loadingTextError: {
+      fontSize: 20,
+      color: colors.white,
+      marginBottom: 5,
+      justifyContent: "center",
+      alignItems: "center",
+      fontFamily: Fonts.PoppinsRegular,
+      marginLeft: 16,
+      marginRight: 16
+   },
+   loadingTextErrorText: {
+      fontSize: 20,
+      color: colors.black,
+      marginBottom: 4,
+      justifyContent: "center",
+      alignItems: "center",
+      fontFamily: Fonts.PoppinsRegular
+   },
+
+   loadingTextErrorButton: {
+      fontSize: 18,
+      color: colors.white,
+      fontFamily: Fonts.PoppinsRegular
+   },
+   buttonError: {
+      borderRadius: 4,
+      backgroundColor: colors.errorcolor,
+      height: 45,
+      marginTop: 25,
+      paddingRight: 10,
+      paddingLeft: 10,
+      alignItems: "center",
+      justifyContent: "center"
+   },
+
+   loadingButtonIcon: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 5
    },
 
    container: {

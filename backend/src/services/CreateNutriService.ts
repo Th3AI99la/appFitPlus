@@ -29,9 +29,6 @@ class CreateNutriService {
         e não retorne nenhuma observação além das passadas no prompt, retorne em JSON e nenhuma propriedade pode ter acento.`
       );
 
-      // PRINTAR A RESPOSTA
-      console.log(JSON.stringify(response, null, 2));
-
       // ACESSAR A RESPOSTA NO PROMPT
       if (response.response && response.response.candidates) {
         const jsonText = response.response.candidates[0]?.content.parts[0]
