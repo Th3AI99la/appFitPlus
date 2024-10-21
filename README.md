@@ -113,6 +113,8 @@ Aqui estão algumas capturas de tela do **FitPlus** para ilustrar como o aplicat
     <img src="images/1.png" alt="Tela 1" width="300">
     <p><b>Tela 1:</b> Home</p>
   </div>
+  
+  <br>
 
   <div style="text-align: center; margin: 10px;">
     <img src="images/2.png" alt="Tela 2" width="300">
