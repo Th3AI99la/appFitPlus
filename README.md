@@ -107,83 +107,83 @@ Aqui estão algumas capturas de tela do **FitPlus** para ilustrar como o aplicat
 
 ## Apresentação das Telas
 
+## Apresentação das Telas
+
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/1.png" alt="Tela 1" width="300">
     <p><b>Tela 1:</b> Home</p>
+    <img src="images/1.png" alt="Tela 1" width="300">
   </div>
-  
-  <br>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/2.png" alt="Tela 2" width="300">
     <p><b>Tela 2:</b> Entrada de dados (Nome, Peso Atual, Altura, Idade)</p>
+    <img src="images/2.png" alt="Tela 2" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/3.png" alt="Tela 3" width="300">
     <p><b>Tela 3:</b> Forçando as exceções</p>
+    <img src="images/3.png" alt="Tela 3" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/4.png" alt="Tela 4" width="300">
     <p><b>Tela 4:</b> Forçando outra exceção</p>
+    <img src="images/4.png" alt="Tela 4" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/5.png" alt="Tela 5" width="300">
     <p><b>Tela 5:</b> Informações Inseridas</p>
+    <img src="images/5.png" alt="Tela 5" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/6.png" alt="Tela 6" width="300">
     <p><b>Tela 6:</b> Entrada de dados (Gênero, Nível Atual, Meta de Treino)</p>
+    <img src="images/6.png" alt="Tela 6" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/7.png" alt="Tela 7" width="300">
     <p><b>Tela 7:</b> Opções de Nível de Atividade Física</p>
+    <img src="images/7.png" alt="Tela 7" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/8.png" alt="Tela 8" width="300">
     <p><b>Tela 8:</b> Opções de Meta de Treino</p>
+    <img src="images/8.png" alt="Tela 8" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/9.png" alt="Tela 9" width="300">
     <p><b>Tela 9:</b> Tela de Loading 1</p>
+    <img src="images/9.png" alt="Tela 9" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/10.png" alt="Tela 10" width="300">
     <p><b>Tela 10:</b> Tela de Loading 2</p>
+    <img src="images/10.png" alt="Tela 10" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/10.1.png" alt="Tela 11" width="300">
     <p><b>Tela 11:</b> Tela Exceção - "Sem Conexão com a Internet"</p>
+    <img src="images/10.1.png" alt="Tela 11" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/10.2.png" alt="Tela 12" width="300">
     <p><b>Tela 12:</b> Tela Exceção 2 - "Erro ao criar a dieta, com opção de retorno à tela principal"</p>
+    <img src="images/10.2.png" alt="Tela 12" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
-    <img src="images/11.png" alt="Tela 13" width="300">
     <p><b>Tela 13:</b> Dieta Gerada</p>
+    <img src="images/11.png" alt="Tela 13" width="300">
   </div>
 
   <div style="text-align: center; margin: 10px;">
+    <p><b>Tela 14:</b> Opção de "Gerar Nova Dieta"</p>
     <img src="images/12.png" alt="Tela 14" width="300">
-    <p><b>Tela 14:</b> Opção de "Gerar Nova Dieta</p>
   </div>
 
   <div style="text-align: center; margin: 10px;">
+    <p><b>Tela 15:</b> Opção de Compartilhar Dieta</p>
     <img src="images/13.png" alt="Tela 15" width="300">
-    <p><b>Tela 15:</b> Opção de Compartilhar Dieta"</p>
   </div>
 
 </div>
