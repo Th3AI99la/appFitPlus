@@ -120,21 +120,15 @@ export default function Diet() {
          if (data && Object.keys(data).length === 0) return;
 
          // se tiver
-         const suppleShare = `   ${data?.suplementos.map((item) => `${item}`)}`;
+         const suppleShare = `${data?.suplementos.map((item) => `${item}`)}`;
 
          // exibiçao do Share
-         const foods = `${data?.refeicoes.map(
-            (item) =>
-               `\n- Intervalo: ${item.nome}\n- Horário: ${item.horario}\n- Alimentos: ${item.alimentos.map(
-                  (alimento) => `${alimento}`
-               )}\n`
-         )}`;
+         const foods = `${data?.refeicoes.map((item) => `\n- Intervalo: ${item.nome}\n- Horário: ${item.horario}\n- Alimentos: ${item.alimentos.map((alimento) => `${alimento}`)}\n`)}`;
 
          // juntada
          const message = `Nome: ${data?.nome} - Objetivo: ${data?.objetivo}\n\n${foods}\n\n- Dica de Suplementos: ${suppleShare}`;
 
          // compartilhamento
-
          await Share.share({
             message: message
          });
@@ -259,6 +253,7 @@ export default function Diet() {
    );
 }
 
+// Estilo
 const styles = StyleSheet.create({
    loading: {
       flex: 1,
