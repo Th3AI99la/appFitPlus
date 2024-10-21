@@ -101,4 +101,28 @@ O front-end foi desenvolvido em React Native, utilizando Expo para facilitar o d
 
 
 
+## 📸 Apresentação / Demonstração do Projeto
+
+Aqui estão algumas capturas de tela do **FitPlus** para ilustrar como o aplicativo funciona:
+
+<div style="display: flex; justify-content: space-around;">
+
+  <div style="text-align: center; margin: 10px;">
+    <img src="images/1.png" alt="Tela 1" width="300">
+    <p><b>Tela 1</b>: Descrição breve da tela 1</p>
+  </div>
+
+  <div style="text-align: center; margin: 10px;">
+    <img src="images/2.png" alt="Tela 2" width="300">
+    <p><b>Tela 2</b>: Descrição breve da tela 2</p>
+  </div>
+
+  <div style="text-align: center; margin: 10px;">
+    <img src="images/3.png" alt="Tela 3" width="300">
+    <p><b>Tela 3</b>: Descrição breve da tela 3</p>
+  </div>
+
+</div>
+
+
 
