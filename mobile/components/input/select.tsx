@@ -1,3 +1,6 @@
+import 'core-js/features/set-immediate';
+import 'react-native-polyfill-globals/auto';
+
 // INPUT - FINALIZANDO PASSO 2
 
 import { View, StyleSheet, Text, TouchableOpacity, FlatList, Modal } from "react-native";
@@ -64,7 +67,7 @@ export function Select({ name, control, placeholder, error, options }: SelectPro
             control={control}
             name={name}
             // render
-            render={({ field: { onChange, onBlur, value } }) => (
+            render={({ field: { onChange, onBlur, value } }: { field: { onChange: (value: any) => void; onBlur: () => void; value: any } }) => (
                <>
                   <TouchableOpacity style={styles.select} onPress={() => setVisible(true)}>
                      <Text>{value ? options.find((options) => options.value === value)?.label : placeholder}</Text>
