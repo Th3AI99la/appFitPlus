@@ -2,11 +2,9 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["./*"]
-    },
-    "types": [] // Adicione esta linha para ignorar tipos implícitos
+    }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
