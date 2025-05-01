@@ -12,3 +12,5 @@ import axios from "axios";
 export const api = axios.create({
    baseURL: "http://192.168.15.90:8888"
 });
+
+// verificar esse erro do package.json
