@@ -31,9 +31,9 @@ const start = async () => {
   app.register(routes);
 
   try {
-    await app.listen({ port: 8889, host: "0.0.0.0" });
+    await app.listen({ port: 8888, host: "0.0.0.0" });
     const localIPv4 = getLocalIPv4();
-    console.log(`\nServidor rodando no IP - IPV4: ${localIPv4}:8889\n`);
+    console.log(`\nServidor rodando no IP - IPV4: ${localIPv4}:8888\n`);
   } catch (err) {
     console.log(err);
   }
