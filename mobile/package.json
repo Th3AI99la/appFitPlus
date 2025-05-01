@@ -1,6 +1,6 @@
 {
   "name": "mobile",
-  "main": "expo-router/entry",
+  "main": "./node_modules/expo-router/entry",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
@@ -69,6 +69,9 @@
       "reactNativeDirectoryCheck": {
         "listUnknownPackages": false
       }
-    }
+    },
+    "plugins": 
+    ["expo-router"],
+    "entryPoint": "./node_modules/expo-router/entry"
   }
 }
