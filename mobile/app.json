@@ -26,6 +26,7 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+    "entryPoint": "./node_modules/expo-router/entry",
     "plugins": [
       "expo-router",
       "expo-font",

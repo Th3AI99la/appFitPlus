@@ -1,5 +1,8 @@
 // LAYOUT INSERIR AS TELAS
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router';
+
+// centraliza o conteúdo
+import 'react-native-reanimated';
 
 // caches
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";

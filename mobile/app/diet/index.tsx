@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet, Pressable, ScrollView, Share } from "react-native";
 import { router } from "expo-router";
 
+
 // Icons
 import { Ionicons } from "@expo/vector-icons";
 
