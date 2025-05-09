@@ -10,5 +10,6 @@ import axios from "axios";
 // http://10.200.2.228:8888 - UEG
 
 export const api = axios.create({
-   baseURL: "http://192.168.0.211:8888"
+   baseURL: "http://192.168.15.90:8888",
 });
+
