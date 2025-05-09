@@ -3,7 +3,6 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import { colors } from "../constants/colors";
 import { Link } from "expo-router";
-
 //fontes
 import React, { useState, useEffect } from "react";
 import * as Font from "expo-font"; // Importa o módulo para carregar fontes

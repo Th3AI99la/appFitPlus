@@ -5,7 +5,6 @@ import { colors } from "../../constants/colors";
 import { Header } from "../../components/header";
 import { Input } from "../../components/input";
 
-
 // Dados e Store
 import { useDataStore } from "../../store/data";
 
