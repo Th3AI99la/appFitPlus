@@ -1,19 +1,19 @@
 // PASSO 2
 
-import { View, Text, StyleSheet, Pressable, ScrollView, KeyboardTypeOptions } from "react-native";
+import { router } from "expo-router";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Header } from "../../components/header/index";
 import { colors } from "../../constants/colors";
-import { router } from "expo-router";
 
 // Fontes
-import React, { useState, useEffect } from "react";
 import * as Font from "expo-font"; // Importa o módulo para carregar fontes
+import React, { useEffect, useState } from "react";
 import { Fonts } from "../../styles/fonts";
 
 // Zod
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 // Store
 import { useDataStore } from "../../store/data";

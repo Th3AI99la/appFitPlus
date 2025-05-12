@@ -1,5 +1,5 @@
-import { View, Text, Image, StyleSheet, Pressable, ScrollView, Share } from "react-native";
 import { router } from "expo-router";
+import { Pressable, ScrollView, Share, StyleSheet, Text, View } from "react-native";
 
 // Icons
 import { Ionicons } from "@expo/vector-icons";
@@ -11,13 +11,13 @@ import { api } from "../../services/api";
 import { useQuery } from "@tanstack/react-query";
 
 //fontes
-import React, { useState, useEffect } from "react";
 import * as Font from "expo-font"; // Importa o módulo para carregar fontes
+import React, { useEffect, useState } from "react";
 import { Fonts } from "../../styles/fonts";
 
 // Store - pegar os dados da minha Store
-import { useDataStore } from "../../store/data";
 import { colors } from "@/constants/colors";
+import { useDataStore } from "../../store/data";
 
 // Importar a tipagem dos dados
 import { Data } from "../../types/data";

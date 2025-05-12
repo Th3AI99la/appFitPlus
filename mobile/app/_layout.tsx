@@ -1,8 +1,8 @@
 // LAYOUT INSERIR AS TELAS
-import { Stack } from 'expo-router'; 
+import { Stack } from 'expo-router';
 
 // caches
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export default function RootLayout() {
    // Instaciamento - PARA CACHES
