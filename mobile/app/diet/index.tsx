@@ -21,7 +21,6 @@ import { colors } from "@/constants/colors";
 
 // Importar a tipagem dos dados
 import { Data } from "../../types/data";
-import { Link } from "@react-navigation/native";
 
 // Interface do Data
 
