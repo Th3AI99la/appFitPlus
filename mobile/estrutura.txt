@@ -40,6 +40,7 @@
 │   └── colors.ts
 ├── estrutura.txt
 ├── expo-env.d.ts
+├── index.tsx
 ├── package.json
 ├── react-native.config.js
 ├── scripts
@@ -55,4 +56,4 @@
 │   └── data.ts
 └── yarn.lock
 
-17 directories, 39 files
+17 directories, 40 files
