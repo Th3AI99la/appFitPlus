@@ -1,5 +1,5 @@
 // LAYOUT INSERIR AS TELAS
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router'; 
 
 // caches
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
