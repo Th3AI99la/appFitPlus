@@ -1,9 +1,7 @@
 import axios from "axios";
 
-// API - conectada ao IPV4 - http://192.168.1.103:8888 /create 
-// 172.20.10.4:8888
+// API - conectada ao IPV4 - http://192.168.1.103:8888 /create
 
 export const api = axios.create({
-   baseURL: "http://172.20.10.4:8888"
-   
+   baseURL: "http://192.168.15.133:8888"
 });
