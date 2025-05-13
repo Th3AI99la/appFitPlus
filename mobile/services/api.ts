@@ -1,7 +1,10 @@
 import axios from "axios";
+import Constants from "expo-constants";
 
-// API - conectada ao IPV4 - http://192.168.1.103:8888 /create
+// Pega o IP local da máquina onde o Expo está rodando
+const LOCAL_IP = Constants.expoConfig?.hostUri?.split(":")[0];
 
+// Cria a instância do axios usando o IP detectado
 export const api = axios.create({
-   baseURL: "http://192.168.15.133:3333"
+  baseURL: `http://${LOCAL_IP}:3333` // Seu backend Fastify
 });
