@@ -1,6 +1,7 @@
 import { DataProps } from "../controllers/CreateNutriController";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+
 class CreateNutriService {
   async execute({
     nome,
@@ -14,10 +15,10 @@ class CreateNutriService {
     try {
       // Tentar conectar na API da GOOGLE COM A CHAVE
 
-      const genAI = new GoogleGenerativeAI(process.env.API_key!);
+      const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 
       // MODEL GOOGLE
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       // CRIAR PROMPT
       const response = await model.generateContent(

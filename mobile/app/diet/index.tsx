@@ -41,7 +41,7 @@ export default function Diet() {
                throw new Error("Erro ao carregar a dieta...");
             }
 
-            //const response = await api.get<ResponseData>("/teste");
+            // const response = await api.get<ResponseData>("/teste");
 
             // fazer a requisão
             const response = await api.post<ResponseData>("/create", {
@@ -52,7 +52,9 @@ export default function Diet() {
                peso: user.peso,
                level: user.level,
                objetivo: user.objetivo
-            });
+            }); 
+
+            console.log(response.data.data);
 
             // Caso demore muito a responder, verifique as portas no SERVICE - IPV4
 

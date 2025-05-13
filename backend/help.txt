@@ -1,0 +1,22 @@
+Para que o sistema funcione corretamente, é necessário criar uma chave de API.
+
+Passos:
+
+1. Acesse o site do Google IA Gemini
+2. Gere sua chave de API.
+3. Crie um arquivo chamado ".env" na raiz do seu projeto.
+4. Adicione a seguinte linha ao arquivo .env:
+   API_KEY=SUA_CHAVE_AQUI
+
+
+
+To make the system work properly, you need to create an API key.
+
+Steps:
+
+1. Go to the Google Gemini AI website
+2. Generate your API key.
+3. Create a file named ".env" at the root of your project.
+4. Add the following line to the .env file:
+   API_KEY=YOUR_API_KEY_HERE
+
