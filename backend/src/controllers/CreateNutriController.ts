@@ -3,6 +3,7 @@ import { FastifyRequest, FastifyReply } from "fastify";
 import { CreateNutriService } from "../services/CreateNutriService";
 
 // TIPAGEN
+// Definindo a interface DataProps para tipagem dos dados recebidos
 export interface DataProps {
   nome: string;
   idade: number;

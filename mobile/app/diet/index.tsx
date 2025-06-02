@@ -40,7 +40,7 @@ export default function Diet() {
             if (!user) {
                throw new Error("Erro ao carregar a dieta...");
             }
-
+            // PARA TESTE
             // const response = await api.get<ResponseData>("/teste");
 
             // fazer a requisão

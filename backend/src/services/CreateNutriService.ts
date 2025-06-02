@@ -1,7 +1,6 @@
 import { DataProps } from "../controllers/CreateNutriController";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-
 class CreateNutriService {
   async execute({
     nome,
@@ -36,7 +35,10 @@ class CreateNutriService {
           .text as string;
 
         // Para extrair o JSON  (jsonStrin), A função  ".trim()" serve para remover espaço.
-        let jsonString = jsonText.replace(/```\w*\n/g, "").replace(/\n```/g, "").trim();
+        let jsonString = jsonText
+          .replace(/```\w*\n/g, "")
+          .replace(/\n```/g, "")
+          .trim();
 
         // Conversão da jsonString, para um parse
         let jsonObject = JSON.parse(jsonString);
@@ -47,7 +49,7 @@ class CreateNutriService {
       //Caso não consiga, caí nesse erro!
       console.error("Erro JSON: ", err);
 
-      //Execeção
+      // Se não conseguir criar, retornar um erro
       throw new Error("Failed create.");
     }
   }

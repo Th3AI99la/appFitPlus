@@ -72,7 +72,7 @@ export default function Step() {
    // Avançar tela
 
    function handleCreate(data: FormData) {
-      console.log("PASSANDO PAGINA 1");
+      // Formatar os campos de altura e peso
       setPageOne({
          name: data.name,
          peso: data.peso,

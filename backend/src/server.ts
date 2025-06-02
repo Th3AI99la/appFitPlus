@@ -26,6 +26,7 @@ function getLocalIPv4() {
   return "localhost";
 }
 
+// Inicia o servidor Fastify e registra as rotas
 const start = async () => {
   app.register(cors);
   app.register(routes);
